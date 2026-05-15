@@ -1,3 +1,5 @@
+BEGIN;
+
 -- Task 1
 
 WITH new_movies AS (
@@ -593,3 +595,5 @@ UNION ALL SELECT 'rental_yours',   COUNT(*) FROM rental r JOIN customer c USING 
                                    WHERE c.first_name='Amina' AND c.last_name='Azhibaeva'
 UNION ALL SELECT 'payment_yours',  COUNT(*) FROM payment p JOIN customer c USING (customer_id)
                                    WHERE c.first_name='Amina' AND c.last_name='Azhibaeva';
+
+COMMIT;
